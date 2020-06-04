@@ -9,25 +9,28 @@
 import SwiftUI
 
 /// ViewModel in the project
-final class EmojiMemoryGame {
-    private(set) var model: MemoryGame<String> = EmojiMemoryGame.defaultMemoryGame
+final class EmojiMemoryGame: ObservableObject {
+    @Published private var model: MemoryGame<String> = EmojiMemoryGame.defaultMemoryGame()
     
-    static let defaultMemoryGame: MemoryGame<String> = {
+    static func defaultMemoryGame() -> MemoryGame<String> {
         let numberOfPairOfCards = Int.random(in: 3...4)
         let emojis = ["👻", "🎃", "🕷", "👽", "🧟‍♂️"]
-        return MemoryGame<String>(numberOfPairOfCards: numberOfPairOfCards) { pairIndex in
-            emojis[pairIndex]
+        var memoryGame = MemoryGame<String>(numberOfPairOfCards: numberOfPairOfCards) { pairIndex in
+            return emojis[pairIndex]
         }
-    }()
+        memoryGame.shuffling()
+        return memoryGame
+    }
     
     //MARK: - Access to the Model
     var cards: Array<MemoryGame<String>.Card> {
-        model.cards.shuffled()
+        self.model.cards
     }
     
     
     //MARK: - Intent(s)
     func choose(card: MemoryGame<String>.Card) {
-        model.choose(card: card)
+//        self.objectWillChange.send()
+        self.model.choose(card: card)
     }
 }

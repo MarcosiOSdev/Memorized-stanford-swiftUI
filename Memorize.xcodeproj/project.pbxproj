@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28CB6BEB2487FFDD000638CD /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CB6BEA2487FFDD000638CD /* Grid.swift */; };
+		28CB6BED248839FB000638CD /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CB6BEC248839FB000638CD /* GridLayout.swift */; };
+		28CB6BF024883E2D000638CD /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CB6BEF24883E2D000638CD /* Array+Identifiable.swift */; };
+		28CB6BF22488AFFB000638CD /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CB6BF12488AFFB000638CD /* Array+Only.swift */; };
+		28CB6BF42489991B000638CD /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CB6BF32489991B000638CD /* Pie.swift */; };
+		28CB6BF62489A377000638CD /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CB6BF52489A377000638CD /* Cardify.swift */; };
 		D89AB4AB2474356E00A49683 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89AB4AA2474356E00A49683 /* AppDelegate.swift */; };
 		D89AB4AD2474356E00A49683 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89AB4AC2474356E00A49683 /* SceneDelegate.swift */; };
-		D89AB4AF2474356E00A49683 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89AB4AE2474356E00A49683 /* ContentView.swift */; };
+		D89AB4AF2474356E00A49683 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89AB4AE2474356E00A49683 /* EmojiMemoryGameView.swift */; };
 		D89AB4B12474357200A49683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D89AB4B02474357200A49683 /* Assets.xcassets */; };
 		D89AB4B42474357200A49683 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D89AB4B32474357200A49683 /* Preview Assets.xcassets */; };
 		D89AB4B72474357200A49683 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89AB4B52474357200A49683 /* LaunchScreen.storyboard */; };
@@ -18,10 +24,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28CB6BEA2487FFDD000638CD /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		28CB6BEC248839FB000638CD /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		28CB6BEF24883E2D000638CD /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
+		28CB6BF12488AFFB000638CD /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
+		28CB6BF32489991B000638CD /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		28CB6BF52489A377000638CD /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		D89AB4A72474356E00A49683 /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89AB4AA2474356E00A49683 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D89AB4AC2474356E00A49683 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D89AB4AE2474356E00A49683 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D89AB4AE2474356E00A49683 /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
 		D89AB4B02474357200A49683 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D89AB4B32474357200A49683 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D89AB4B62474357200A49683 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +53,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		286C7D502486DDE600D52598 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				286C7D532486DE1000D52598 /* Game */,
+				286C7D522486DE0300D52598 /* Config */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		286C7D512486DDEE00D52598 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D89AB4B02474357200A49683 /* Assets.xcassets */,
+				D89AB4B52474357200A49683 /* LaunchScreen.storyboard */,
+				D89AB4B82474357200A49683 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		286C7D522486DE0300D52598 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D89AB4AA2474356E00A49683 /* AppDelegate.swift */,
+				D89AB4AC2474356E00A49683 /* SceneDelegate.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		286C7D532486DE1000D52598 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				D89AB4BE247486BE00A49683 /* MemoryGame.swift */,
+				D89AB4C02474874200A49683 /* EmojiMemoryGame.swift */,
+				D89AB4AE2474356E00A49683 /* EmojiMemoryGameView.swift */,
+				28CB6BEA2487FFDD000638CD /* Grid.swift */,
+				28CB6BEC248839FB000638CD /* GridLayout.swift */,
+				28CB6BF32489991B000638CD /* Pie.swift */,
+				28CB6BF52489A377000638CD /* Cardify.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		28CB6BEE24883E10000638CD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				28CB6BEF24883E2D000638CD /* Array+Identifiable.swift */,
+				28CB6BF12488AFFB000638CD /* Array+Only.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		D89AB49E2474356E00A49683 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +123,10 @@
 		D89AB4A92474356E00A49683 /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
-				D89AB4AA2474356E00A49683 /* AppDelegate.swift */,
-				D89AB4AC2474356E00A49683 /* SceneDelegate.swift */,
-				D89AB4AE2474356E00A49683 /* ContentView.swift */,
-				D89AB4B02474357200A49683 /* Assets.xcassets */,
-				D89AB4B52474357200A49683 /* LaunchScreen.storyboard */,
-				D89AB4B82474357200A49683 /* Info.plist */,
+				28CB6BEE24883E10000638CD /* Utilities */,
+				286C7D512486DDEE00D52598 /* SupportingFiles */,
+				286C7D502486DDE600D52598 /* Application */,
 				D89AB4B22474357200A49683 /* Preview Content */,
-				D89AB4BE247486BE00A49683 /* MemoryGame.swift */,
-				D89AB4C02474874200A49683 /* EmojiMemoryGame.swift */,
 			);
 			path = Memorize;
 			sourceTree = "<group>";
@@ -152,11 +210,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28CB6BF62489A377000638CD /* Cardify.swift in Sources */,
+				28CB6BF42489991B000638CD /* Pie.swift in Sources */,
 				D89AB4AB2474356E00A49683 /* AppDelegate.swift in Sources */,
 				D89AB4AD2474356E00A49683 /* SceneDelegate.swift in Sources */,
 				D89AB4BF247486BE00A49683 /* MemoryGame.swift in Sources */,
-				D89AB4AF2474356E00A49683 /* ContentView.swift in Sources */,
+				28CB6BF22488AFFB000638CD /* Array+Only.swift in Sources */,
+				D89AB4AF2474356E00A49683 /* EmojiMemoryGameView.swift in Sources */,
 				D89AB4C12474874200A49683 /* EmojiMemoryGame.swift in Sources */,
+				28CB6BF024883E2D000638CD /* Array+Identifiable.swift in Sources */,
+				28CB6BED248839FB000638CD /* GridLayout.swift in Sources */,
+				28CB6BEB2487FFDD000638CD /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +360,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/Preview Content\"";
 				DEVELOPMENT_TEAM = V2686JM7D9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Memorize/Info.plist;
+				INFOPLIST_FILE = Memorize/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,7 +380,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/Preview Content\"";
 				DEVELOPMENT_TEAM = V2686JM7D9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Memorize/Info.plist;
+				INFOPLIST_FILE = Memorize/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

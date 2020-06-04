@@ -8,16 +8,16 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct EmojiMemoryGameView: View {
     var viewModel: EmojiMemoryGame
     
     var body: some View {
-        
         HStack {
             ForEach(viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
                     self.viewModel.choose(card: card)
-                }.aspectRatio(2/3, contentMode: .fit)
+                }
+                .aspectRatio(2/3, contentMode: .fit)
             }
         }
         .padding()
@@ -28,7 +28,6 @@ struct ContentView: View {
 
 
 struct CardView: View {
-    
     var card: MemoryGame<String>.Card
     
     var body: some View {
@@ -48,6 +47,6 @@ struct CardView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: EmojiMemoryGame())
+        EmojiMemoryGameView(viewModel: EmojiMemoryGame())
     }
 }
