@@ -44,7 +44,8 @@ struct CardView: View {
                 Pie(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: 150-90), clockwise: true)
                     .padding(5)
                     .opacity(0.3)
-                Text(card.content).font(Font.system(size: fontSize(for: size)))
+                Text(card.content)
+                    .font(Font.system(size: fontSize(for: size)))
             }
             .cardify(isFaceUp: card.isFaceUp)
         }

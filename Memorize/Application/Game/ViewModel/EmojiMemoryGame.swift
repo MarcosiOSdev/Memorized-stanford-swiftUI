@@ -24,13 +24,14 @@ final class EmojiMemoryGame: ObservableObject {
     
     //MARK: - Access to the Model
     var cards: Array<MemoryGame<String>.Card> {
-        self.model.cards
+        model.cards
     }
-    
     
     //MARK: - Intent(s)
     func choose(card: MemoryGame<String>.Card) {
-//        self.objectWillChange.send()
-        self.model.choose(card: card)
+        // Sempre que mudar a model vai chamar o objectWillChange.send()
+        // Isso faz com que aconteca um redraw na view.
+//        objectWillChange.send()
+        model.choose(card: card)
     }
 }

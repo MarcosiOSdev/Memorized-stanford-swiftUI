@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// MemoryGame contem  o CardContent pq o Card.content pode ser Int, String, Image e Any.
 struct MemoryGame<CardContent> where CardContent: Equatable {
     var cards: Array<Card>
     
@@ -18,6 +19,15 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
             for index in cards.indices {
                 cards[index].isFaceUp = index == newValue
             }
+        }
+    }
+    
+    init(numberOfPairOfCards: Int, cardContentFactory: (Int) -> CardContent) {
+        cards = Array<Card>()
+        for pairIndex in 0..<numberOfPairOfCards {
+            let content = cardContentFactory(pairIndex)
+            cards.append(Card(id: pairIndex * 2, content: content))
+            cards.append(Card(id: pairIndex * 2 + 1, content: content))
         }
     }
     
@@ -44,15 +54,6 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     
     mutating func shuffling() {
         self.cards.shuffle()
-    }
-    
-    init(numberOfPairOfCards: Int, cardContentFactory: (Int) -> CardContent) {
-        cards = Array<Card>()
-        for pairIndex in 0..<numberOfPairOfCards {
-            let content = cardContentFactory(pairIndex)
-            cards.append(Card(id: pairIndex * 2, content: content))
-            cards.append(Card(id: pairIndex * 2 + 1, content: content))
-        }
     }
     
     struct Card: Identifiable {
