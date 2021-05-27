@@ -10,7 +10,7 @@ import Foundation
 
 /// MemoryGame contem  o CardContent pq o Card.content pode ser Int, String, Image e Any.
 struct MemoryGame<CardContent> where CardContent: Equatable {
-    var cards: Array<Card>
+    private(set) var cards: Array<Card>
     
     var indexOfThenOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter { cards[$0].isFaceUp }.only }

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Pie: Shape {
     
-    var startAngle  : Angle
+    var startAngle: Angle
     var endAngle: Angle
     var clockwise: Bool = false
     
