@@ -12,16 +12,26 @@ struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
     
     var body: some View {
-        
-        Grid(viewModel.cards) { card in
-            CardView(card: card).onTapGesture {
-                self.viewModel.choose(card: card)
+        VStack {
+            Grid(viewModel.cards) { card in
+                CardView(card: card).onTapGesture {
+                    withAnimation(.linear(duration: 2)) {
+                        self.viewModel.choose(card: card)
+                    }
+                }
+    //            .aspectRatio(2/3, contentMode: .fit)
+                .padding(5)
             }
-//            .aspectRatio(2/3, contentMode: .fit)
-            .padding(5)
+            .padding()
+            .foregroundColor(Color.orange)
+            
+            Button("New Game") {
+                withAnimation(.easeInOut(duration: 2)) {
+                    viewModel.resetGame()
+                }
+            }
         }
-        .padding()
-        .foregroundColor(Color.orange)
+        
     }
 }
 
@@ -46,7 +56,10 @@ struct CardView: View {
                     clockwise: true)
                     .padding(4)
                     .opacity(0.4)
-                Text(card.content).font(Font.system(size: fontSize(for: size)))
+                Text(card.content)
+                    .font(Font.system(size: fontSize(for: size)))
+                    .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
+                    .animation(card.isMatched ? Animation.linear(duration: 1).repeatForever(autoreverses: false) : .default)
             }
             .cardify(isFaceUp: card.isFaceUp)
         }
